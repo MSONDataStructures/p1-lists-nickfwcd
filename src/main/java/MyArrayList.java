@@ -29,11 +29,11 @@ public class MyArrayList {
     }
 
     private void resize(){
-        Integer[] newNums = new Integer[list.length + 10];
+        Integer[] newlist = new Integer[list.length + 10];
         for(int i = 0; i < list.length; i++){
-            newNums[i] = list[i];
+            newlist[i] = list[i];
         }
-        list = newNums;
+        list = newlist;
     }
 
     /**
@@ -84,15 +84,13 @@ public class MyArrayList {
      */
     public Integer remove(int index) {
         Integer num = get(index);
-        if(index == size -1){
+        if(index == size -1) {
             size--;
         }
-        else{
             for(int i = index; i < size -1; i++){
                 list[i] = list[i+1];
             }
             size--;
-        }
         return num;
     }
 
